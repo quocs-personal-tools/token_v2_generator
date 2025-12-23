@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/react";
+
 import { useEffect, useMemo, useState } from "react";
 import { Copy, CopyCheck } from "lucide-react";
 
@@ -47,7 +49,7 @@ export function App() {
       };
     }
   }, [queryParamsText]);
-  
+
   const bodyDataParse = useMemo(() => {
     try {
       return {
@@ -238,6 +240,9 @@ export function App() {
           </Card>
         </div>
       </div>
+
+      {/* For showing analytics on vercel project dashboard */}
+      <Analytics />
     </div>
   );
 }
